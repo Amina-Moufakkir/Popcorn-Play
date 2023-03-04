@@ -1,22 +1,13 @@
-import { AppBar,
-  IconButton,
-  Toolbar,
-  //  Drawer,
-  Button,
-  Avatar,
-  useMediaQuery } from '@mui/material';
+import { AppBar, IconButton, Toolbar, Button, Avatar, useMediaQuery } from '@mui/material';
+import { AccountCircle, Brightness4, Brightness7 } from '@mui/icons-material';
+import MenuIcon from '@mui/icons-material/Menu';
 import { Link } from 'react-router-dom';
-import { Menu,
-  Brightness4,
-  Brightness7,
-  AccountCircle,
-} from '@mui/icons-material';
 import { useTheme } from '@mui/material/styles';
 import useStyles from './styles';
 
 const Navbar = () => {
   const classes = useStyles();
-  const isMobile = useMediaQuery(('max-width:600px'));
+  const isMobile = useMediaQuery('(max-width:600px)');
   const theme = useTheme();
   const isAuthenticated = true;
   return (
@@ -26,11 +17,13 @@ const Navbar = () => {
           <IconButton
             edge="start"
             color="inherit"
+            aria-label="menu"
+            size="large"
             style={{ outline: 'none' }}
             onClick={() => {}}
             className={classes.menuButton}
           >
-            <Menu />
+            <MenuIcon />
           </IconButton>
         )}
         <IconButton color="inherit" sx={{ ml: 1 }} onClick={() => {}}>
